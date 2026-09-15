@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps — Trabalho de DWEB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <p class="hero__label">Trabalho de DWEB</p>
+        <h1>DevOps</h1>
+        <p class="hero__subtitle">O que é, de onde veio e como se sustenta</p>
+    </header>
+
+    <main>
+
+        <section class="content-block" id="introducao">
+            <h2>Introdução</h2>
+            <p>
+                DevOps é uma cultura e um conjunto de práticas que une as equipes de
+                desenvolvimento de software (Dev) e de operações de TI (Ops) para entregar
+                aplicações com mais rapidez, segurança e confiabilidade. Antes de existir esse
+                termo, as duas áreas costumavam trabalhar de forma isolada: os desenvolvedores
+                criavam o software e "entregavam" para a operação colocar no ar, muitas vezes
+                sem entender as dificuldades técnicas envolvidas em manter aquele sistema
+                funcionando de forma estável.
+            </p>
+            <p>
+                Essa separação criava um conflito de interesses natural. Quem desenvolve quer
+                lançar mudanças com frequência, para inovar e corrigir problemas rápido. Quem
+                cuida da operação quer o oposto: o mínimo de mudanças possível, porque cada
+                alteração é um novo risco de o sistema cair. O DevOps existe justamente para
+                resolver essa tensão, tratando desenvolvimento e operação como uma
+                responsabilidade compartilhada, apoiada por automação e comunicação constante.
+            </p>
+        </section>
+
+        <section class="content-block" id="historia">
+            <h2>Como surgiu o DevOps</h2>
+            <p>
+                A origem do DevOps não tem uma data única, mas um percurso de poucos anos que
+                começou com a frustração pessoal de um consultor.
+            </p>
+
+            <ol class="pipeline">
+                <li class="pipeline__item">
+                    <h3>2007 — o problema fica visível</h3>
+                    <ul class="sublist">
+                        <li>O consultor belga Patrick Debois trabalhava em um projeto de migração de data center para o governo da Bélgica.</li>
+                        <li>Sua função exigia transitar constantemente entre a equipe de desenvolvimento e a de operações, e ele sentiu na prática o quanto essas equipes trabalhavam de forma desconectada.</li>
+                    </ul>
+                </li>
+                <li class="pipeline__item">
+                    <h3>2008 — o "muro da confusão"</h3>
+                    <ul class="sublist">
+                        <li>Na Agile Conference de 2008, Debois participou de uma discussão informal com o consultor Andrew Clay Shafer sobre esse mesmo problema.</li>
+                        <li>Os dois descreveram a situação como um "muro da confusão": de um lado, o time de desenvolvimento pedindo mudanças; do outro, o time de operações tentando manter tudo estável — e a comunicação entre eles acontecendo só por meio de chamados burocráticos.</li>
+                    </ul>
+                </li>
+                <li class="pipeline__item">
+                    <h3>2009 — o estopim: "10 deploys por dia"</h3>
+                    <ul class="sublist">
+                        <li>Na conferência Velocity, os engenheiros do Flickr John Allspaw e Paul Hammond apresentaram como a empresa conseguia colocar novas versões do site no ar dezenas de vezes por dia, com risco baixo, unindo desenvolvimento e operação em um mesmo processo.</li>
+                        <li>Inspirado pela ideia, Debois organizou, ainda em 2009, o primeiro evento chamado "DevOpsDays", na cidade de Ghent (Bélgica) — e foi aí que o termo DevOps passou a ser usado.</li>
+                    </ul>
+                </li>
+                <li class="pipeline__item">
+                    <h3>Depois de 2009 — o movimento se organiza</h3>
+                    <ul class="sublist">
+                        <li>Nos anos seguintes, o movimento ganhou uma base teórica mais formal, resumida na sigla CAMS: Cultura, Automação, Medição e Compartilhamento (Culture, Automation, Measurement, Sharing).</li>
+                        <li>Esse período também marcou o surgimento de ferramentas que hoje são padrão em times DevOps, como o Jenkins (automação de integração) e, mais adiante, o Docker e o Kubernetes (empacotamento e orquestração de aplicações).</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section class="content-block" id="pilares">
+            <h2>Pilares do DevOps</h2>
+            <p class="section-intro">
+                A cultura DevOps se apoia em cinco práticas que funcionam em conjunto,
+                como partes de um mesmo fluxo de trabalho.
+            </p>
+
+            <ol class="pipeline">
+                <li class="pipeline__item">
+                    <h3>Integração Contínua</h3>
+                    <ul class="sublist">
+                        <li>Os desenvolvedores juntam o código que escreveram várias vezes ao dia, num repositório central, em vez de guardá-lo isolado por semanas.</li>
+                        <li>Isso evita o acúmulo de conflitos entre versões diferentes do mesmo projeto, porque os problemas de compatibilidade aparecem cedo, quando ainda são pequenos e fáceis de resolver.</li>
+                        <li>Cada nova integração dispara testes automáticos, que avisam a equipe na hora se alguma mudança quebrou algo.</li>
+                    </ul>
+                </li>
+                <li class="pipeline__item">
+                    <h3>Entrega Contínua</h3>
+                    <ul class="sublist">
+                        <li>O código fica sempre em um estado pronto para ser lançado, de forma automática e segura, mesmo que a equipe decida não publicar todo dia.</li>
+                        <li>Isso reduz o risco e o estresse de lançar atualizações grandes e raras, substituindo-as por mudanças pequenas e frequentes.</li>
+                        <li>Uma versão com problema pode ser revertida rapidamente, já que o processo de publicação também é automatizado e repetível.</li>
+                    </ul>
+                </li>
+                <li class="pipeline__item">
+                    <h3>Automação</h3>
+                    <ul class="sublist">
+                        <li>Tarefas repetitivas, como testes, configuração de servidores e verificação de segurança, são feitas por scripts em vez de manualmente.</li>
+                        <li>Isso reduz erros humanos e libera tempo da equipe para resolver problemas mais complexos, em vez de repetir tarefas mecânicas.</li>
+                        <li>A infraestrutura (servidores, redes, bancos de dados) também passa a ser descrita em código — prática conhecida como "infraestrutura como código" — o que torna o ambiente fácil de recriar do zero.</li>
+                    </ul>
+                </li>
+                <li class="pipeline__item">
+                    <h3>Colaboração</h3>
+                    <ul class="sublist">
+                        <li>Equipes de desenvolvimento e operações trabalham juntas desde o início do projeto, em vez de se envolverem só em etapas separadas.</li>
+                        <li>A responsabilidade por um sistema funcionando passa a ser compartilhada, não de um grupo só — isso reduz a prática de um time culpar o outro quando algo dá errado.</li>
+                        <li>Times de segurança e de qualidade também passam a participar desde o início, prática que deu origem ao termo DevSecOps.</li>
+                    </ul>
+                </li>
+                <li class="pipeline__item">
+                    <h3>Monitoramento</h3>
+                    <ul class="sublist">
+                        <li>O sistema é acompanhado em tempo real, com métricas de desempenho e alertas automáticos configurados para cada parte crítica da aplicação.</li>
+                        <li>Problemas são identificados antes que o usuário final perceba algo errado, o que reduz o tempo de indisponibilidade do serviço.</li>
+                        <li>Os dados coletados também alimentam decisões futuras: a equipe entende onde o sistema costuma falhar e prioriza melhorias nesses pontos.</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+
+        <section class="content-block" id="beneficios-desafios">
+            <h2>Benefícios e desafios</h2>
+            <p class="section-intro">
+                Adotar DevOps traz ganhos concretos, mas a mudança não acontece sem
+                obstáculos — a maioria deles ligada a pessoas, não a tecnologia.
+            </p>
+
+            <div class="duo">
+                <div class="duo__col duo__col--positive">
+                    <h3>Benefícios</h3>
+                    <ul class="sublist">
+                        <li>Lançamentos de novas versões muito mais frequentes, com menor risco em cada um.</li>
+                        <li>Recuperação bem mais rápida quando alguma falha acontece em produção.</li>
+                        <li>Menos tempo gasto corrigindo problemas e retrabalhando tarefas mal planejadas.</li>
+                        <li>Equipes mais satisfeitas, já que grande parte do trabalho repetitivo é automatizada.</li>
+                    </ul>
+                </div>
+                <div class="duo__col duo__col--negative">
+                    <h3>Desafios</h3>
+                    <ul class="sublist">
+                        <li>Mudança cultural: equipes acostumadas a trabalhar isoladas podem resistir a dividir responsabilidades.</li>
+                        <li>Curva de aprendizado, já que DevOps exige conhecimentos de desenvolvimento e de infraestrutura ao mesmo tempo.</li>
+                        <li>Excesso de ferramentas disponíveis, o que torna a escolha e a integração entre elas mais difícil.</li>
+                        <li>Falta de apoio da liderança, quando a empresa não entende que a mudança precisa de tempo e investimento.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-block" id="conclusao">
+            <h2>Conclusão</h2>
+            <p>
+                O DevOps nasceu da frustração de um profissional com a distância entre quem
+                desenvolve e quem mantém um sistema no ar — e, em pouco mais de uma década, se
+                tornou um dos modelos mais adotados por empresas de tecnologia no mundo todo.
+                Mais do que uma ferramenta, é uma mudança de cultura: times que antes
+                trabalhavam separados passam a compartilhar responsabilidade pelo ciclo completo
+                de um software, da escrita do código até seu funcionamento em produção.
+            </p>
+            <p>
+                Os cinco pilares — integração contínua, entrega contínua, automação,
+                colaboração e monitoramento — só funcionam bem quando aplicados em conjunto.
+                E, como qualquer mudança cultural, os resultados não aparecem da noite para o
+                dia: exigem tempo, investimento em automação e disposição das equipes para
+                trabalhar de forma mais integrada. Ainda assim, os números mostram que vale a
+                pena — empresas com DevOps maduro lançam software com muito mais frequência e
+                se recuperam de falhas muito mais rápido do que quem ainda trabalha de forma
+                isolada.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__name">Juliano</p>
+        <p>Trabalho de DWEB</p>
+    </footer>
+
+</body>
+</html>
