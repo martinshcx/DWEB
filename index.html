@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisa do Filme</title>
+</head>
+<body>
+    <h1>Pesquisa do Filme</h1>
+    <p id="contador">Respostas: 0 de 45</p>
+
+    Idade: <input type="number" id="idade"><br><br>
+
+    Sexo:
+    <select id="sexo">
+        <option value="F">Feminino</option>
+        <option value="M">Masculino</option>
+        <option value="O">Outros</option>
+    </select><br><br>
+
+    Opinião:
+    <select id="opiniao">
+        <option value="4">Ótimo</option>
+        <option value="3">Bom</option>
+        <option value="2">Regular</option>
+        <option value="1">Péssimo</option>
+    </select><br><br>
+
+    <button onclick="adicionar()">Adicionar</button>
+    <button onclick="mostrarResultado()">Ver resultado</button>
+
+    <p id="erro" style="color: red;"></p>
+    <div id="resultado"></div>
+
+    <script src="pesquisa.js"></script>
+</body>
+</html>
